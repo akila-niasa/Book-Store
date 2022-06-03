@@ -1,0 +1,24 @@
+.side-nav {
+    height: 100%;
+    width: 265px;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: #130f40;
+    overflow-x: hidden;
+    padding-top: 120px;
+  } 
+  .text-color{
+    color: #eb4d4b;
+  }
+
+  /* @media screen and (max-height: 450px) {
+    .side-nav {padding-top: 15px;}
+  }
+  @media (min-width: 576px) {
+    .side-nav{
+      background-color: none;
+      width: 100px;
+    }
+  } */
