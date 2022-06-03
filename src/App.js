@@ -8,6 +8,9 @@ import Home from './Components/Home/Home';
 import Header from './Shared/Header/Header';
 import CheckOut from './Components/CheckOut/CheckOut';
 import RequireAuth from './Components/Login/RequireAuth';
+import Orders from './Components/Orders/Orders';
+import AddProduct from './Components/Admin/AddProduct/AddProduct';
+import Customize from './Components/Admin/Customize/Customize';
 
 export const UserContext = createContext()
 function App() {
@@ -52,6 +55,15 @@ function App() {
       </PrivateRoute> */}
       <Route path='/checkout/:id' element={<RequireAuth>
         <CheckOut/>
+      </RequireAuth>}/>
+      <Route path='/Order' element={<RequireAuth>
+        <Orders/>
+      </RequireAuth>}/>
+      <Route path='/add' element={<RequireAuth>
+        <AddProduct/>
+      </RequireAuth>}/>
+      <Route path='/customize' element={<RequireAuth>
+        <Customize/>
       </RequireAuth>}/>
 
       <Route path = '/login' element={<Login></Login>}>
