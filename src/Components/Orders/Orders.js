@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Header from '../../Shared/Header/Header';
 
 const Orders = () => {
     const [order, setOrder] = useState([]);
@@ -10,6 +11,7 @@ const Orders = () => {
     }, []);
     return (
         <div className = "container">
+            <Header></Header>
         <div className = "row">
             <div className = "col-md-12">
             <table className="table mb-5">

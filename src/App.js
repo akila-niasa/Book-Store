@@ -11,6 +11,7 @@ import RequireAuth from './Components/Login/RequireAuth';
 import Orders from './Components/Orders/Orders';
 import AddProduct from './Components/Admin/AddProduct/AddProduct';
 import Customize from './Components/Admin/Customize/Customize';
+import Manage from './Components/Admin/Manage/Manage';
 
 export const UserContext = createContext()
 function App() {
@@ -20,7 +21,7 @@ function App() {
     <div className="App">
    
 
-<Header></Header>
+
   <Routes>
       <Route path = '/home' element={<Home ></Home>}>
         
@@ -64,6 +65,9 @@ function App() {
       </RequireAuth>}/>
       <Route path='/customize' element={<RequireAuth>
         <Customize/>
+      </RequireAuth>}/>
+      <Route path='/manage' element={<RequireAuth>
+        <Manage/>
       </RequireAuth>}/>
 
       <Route path = '/login' element={<Login></Login>}>

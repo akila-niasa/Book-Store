@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaThLarge,FaPlus,FaEdit } from 'react-icons/fa';
+import { FaThLarge,FaPlus,FaEdit,FaHome } from 'react-icons/fa';
 import './SideNav.css';
 
 const SideNav = () => {
@@ -16,6 +16,14 @@ const SideNav = () => {
                             <Link className="nav-link text-white fs-6" aria-current="page" to ="/manage"><FaThLarge/>&nbsp;&nbsp;Manage Books</Link>
                             <Link className="nav-link text-white fs-6" to ="/add"><FaPlus/>&nbsp;&nbsp;Add Book</Link>
                             <Link className="nav-link text-white fs-6" to ="/customize"><FaEdit/>&nbsp;&nbsp;Edit Book</Link>
+                            <Link className="nav-link text-white fs-6" to="/">
+                    <FaHome
+                    />
+                    &nbsp;&nbsp;
+                    <span>
+                      Back Home<span className="fa fa-home"></span>
+                    </span>
+                  </Link>
                         </div>
                     </div>
                 </nav> 
