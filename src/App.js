@@ -12,6 +12,7 @@ import Orders from './Components/Orders/Orders';
 import AddProduct from './Components/Admin/AddProduct/AddProduct';
 import Customize from './Components/Admin/Customize/Customize';
 import Manage from './Components/Admin/Manage/Manage';
+import NotFound from './Shared/NotFound/NotFound';
 
 export const UserContext = createContext()
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}>
 
         </Route>
+        <Route path='*' element={<NotFound/>}/>
 
       </Routes>
 
