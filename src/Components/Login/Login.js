@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './Login.css'
-import { FaGooglePlusG} from 'react-icons/fa';
+import { FaGooglePlusG } from 'react-icons/fa';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -14,10 +14,10 @@ const Login = () => {
     let location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
-   
+
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
 
-   
+
 
     useEffect(() => {
         if (guser) {
@@ -26,11 +26,11 @@ const Login = () => {
 
         }
     }, [guser, from, navigate])
-    
+
     if (gloading) {
         return <Loading />
     }
-     
+
     const buttonStyle = {
         color: 'white',
         backgroundColor: '#0b2154',
@@ -41,17 +41,17 @@ const Login = () => {
         fontSize: '15px',
         cursor: 'pointer',
         width: '30%',
-       
-      }
+
+    }
     return (
-        <div className = "loginBoxOuter">
-        <div className = "loginBoxInner shadow">
-          <h4 className = "text-capitalize brand-txt text-center pt-5">Login with</h4>
-          <div className="google-btn text-center">
-        <button style ={buttonStyle} onClick = {() => signInWithGoogle()}><FaGooglePlusG  color="#eb4d4b"/>&nbsp;&nbsp;Sign In</button>
-    </div>
+        <div className="loginBoxOuter">
+            <div className="loginBoxInner shadow">
+                <h4 className="text-capitalize brand-txt text-center pt-5">Login with</h4>
+                <div className="google-btn text-center">
+                    <button style={buttonStyle} onClick={() => signInWithGoogle()}><FaGooglePlusG color="#eb4d4b" />&nbsp;&nbsp;Sign In</button>
+                </div>
+            </div>
         </div>
-      </div>
     );
 };
 

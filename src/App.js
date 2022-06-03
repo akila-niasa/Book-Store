@@ -19,74 +19,38 @@ function App() {
   const [logInUser, setLogInUser] = useState({});
   return (
     <div className="App">
-   
 
 
-  <Routes>
-      <Route path = '/home' element={<Home ></Home>}>
-        
-      </Route>
 
-      <Route exact path = '/' element={<Home ></Home>}>
-        
-      </Route>
-{/* 
-      <PrivateRoute path = '/admin'>
-        <Admin></Admin>
-      </PrivateRoute>
+      <Routes>
+        <Route path='/home' element={<Home ></Home>}>
 
-      <PrivateRoute path = '/customize'>
-        <Customize></Customize>
-      </PrivateRoute>
-      
-      <PrivateRoute path = '/order'>
-        <Order></Order>
-      </PrivateRoute>
+        </Route>
 
-      <PrivateRoute path = '/add'>
-        <Add></Add>
-      </PrivateRoute>
+        <Route exact path='/' element={<Home ></Home>}>
 
-      <PrivateRoute path = '/manage'>
-        <Manage books={books}></Manage>
-      </PrivateRoute>
+        </Route>
+        <Route path='/checkout/:id' element={<RequireAuth>
+          <CheckOut />
+        </RequireAuth>} />
+        <Route path='/Order' element={<RequireAuth>
+          <Orders />
+        </RequireAuth>} />
+        <Route path='/add' element={<RequireAuth>
+          <AddProduct />
+        </RequireAuth>} />
+        <Route path='/customize' element={<RequireAuth>
+          <Customize />
+        </RequireAuth>} />
+        <Route path='/manage' element={<RequireAuth>
+          <Manage />
+        </RequireAuth>} />
 
-      <PrivateRoute path = '/checkout/:_id'>
-        <CheckOut></CheckOut>
-      </PrivateRoute> */}
-      <Route path='/checkout/:id' element={<RequireAuth>
-        <CheckOut/>
-      </RequireAuth>}/>
-      <Route path='/Order' element={<RequireAuth>
-        <Orders/>
-      </RequireAuth>}/>
-      <Route path='/add' element={<RequireAuth>
-        <AddProduct/>
-      </RequireAuth>}/>
-      <Route path='/customize' element={<RequireAuth>
-        <Customize/>
-      </RequireAuth>}/>
-      <Route path='/manage' element={<RequireAuth>
-        <Manage/>
-      </RequireAuth>}/>
+        <Route path='/login' element={<Login></Login>}>
 
-      <Route path = '/login' element={<Login></Login>}>
-        
-      </Route>
+        </Route>
 
-      {/* <Route path = '/sidenav'>
-        <SideNav></SideNav>
-      </Route> */}
-
-      {/* <Route path = '/books'>
-        <Books books={books}></Books>
-      </Route> */}
-
-      {/* <Route path = '*'>
-        <NotFound></NotFound>
-      </Route> */}
-
-  </Routes>
+      </Routes>
 
 
     </div>
