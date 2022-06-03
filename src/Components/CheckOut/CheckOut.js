@@ -11,7 +11,7 @@ const CheckOut = () => {
     const dateTime = new Date().toLocaleString();
 
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('https://peaceful-inlet-55752.herokuapp.com/books')
             .then((res) => res.json())
             .then((data) => {
                 const info = data.filter((book) => id === book._id);
@@ -29,7 +29,7 @@ const CheckOut = () => {
         // console.log(userInfo)
         const newOrder = { userInfo, name, authorName, price, image, dateTime };
         // console.log(newOrder);
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://peaceful-inlet-55752.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

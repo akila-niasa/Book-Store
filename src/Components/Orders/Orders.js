@@ -4,7 +4,7 @@ import Header from '../../Shared/Header/Header';
 const Orders = () => {
     const [order, setOrder] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/orders';
+        const url = 'https://peaceful-inlet-55752.herokuapp.com/orders';
         fetch(url)
         .then(res =>res.json())
         .then(data =>setOrder(data))

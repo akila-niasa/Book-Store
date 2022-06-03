@@ -16,7 +16,7 @@ const AddProduct = () => {
             price: data.price,
             image: imageURL
         };
-        const url = `http://localhost:5000/addBookInfo`;
+        const url = `https://peaceful-inlet-55752.herokuapp.com/addBookInfo`;
         fetch(url,{
             method: 'POST',
             headers: {
